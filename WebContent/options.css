@@ -1,0 +1,73 @@
+/*
+ * Copyright 2011 Gildas Lormeau
+ * contact : gildas.lormeau <at> gmail.com
+ * 
+ * This file is part of PageEdit.
+ *
+ *   PageEdit is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU Lesser General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   PageEdit is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU Lesser General Public License for more details.
+ *
+ *   You should have received a copy of the GNU Lesser General Public License
+ *   along with PageEdit.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+body>div {
+	position: relative;
+	margin: 0px auto;
+	width: 220px;
+	font-family: sans-serif;
+	background-color: #F3F7FC;
+	border: 1px solid #D2DBED;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	-webkit-box-shadow: #999 3px 3px 3px;
+}
+
+body>div>div {
+	padding: 10px;	
+}
+
+.optionBlock {
+	overflow: hidden;
+	padding-top: 5px;
+}
+
+h2 {
+	font-size: 17px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	margin-top: 3px;
+	margin-bottom: 15px;
+}
+
+label {
+	display: inline-block;
+	width: 100px;
+}
+
+select {
+	width: 90px;	
+}
+
+#main {
+	display: none;
+	border-radius: 5px;
+}
+
+#icon {
+	width: 25px;
+	padding-right: 10px;
+	vertical-align: bottom;
+}
+
+p {
+	font-style: italic;
+	text-align: justify;
+}
