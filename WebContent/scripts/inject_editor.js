@@ -88,6 +88,7 @@ var pageedit;
 				pageedit.editor.execCommand("maximize");
 			});
 		}
+
 		if (message.toggleEditor) {
 			if (pageedit && pageedit.editor) {
 				var data = pageedit.editor.getData();
