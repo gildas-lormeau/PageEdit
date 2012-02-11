@@ -22,6 +22,8 @@ var pageedit;
 
 (function() {
 
+	var URL = window.webkitURL || window.URL;
+	var BlobBuilder = window.WebKitBlobBuilder || window.BlobBuilder;
 	var EXT_ID = "pageedit", TEXTAREA_ID = "__CKEditor_textArea__";
 
 	function getDoctype() {
@@ -45,12 +47,14 @@ var pageedit;
 		var i, pageContent, title = document.title;
 
 		function savedialog(editor) {
-			var link = document.createElement("a");
-			link.setAttribute("href", "data:text/html," + editor.getData());
-			link.setAttribute("target", "_blank");
-			link.innerHTML = "right-click and save this link";
+			var link = document.createElement("a"), blobBuilder = new BlobBuilder(), BOM = new ArrayBuffer(3), v = new Uint8Array(BOM);
+			v.set([ 0xEF, 0xBB, 0xBF ]);
+			blobBuilder.append(BOM);
+			blobBuilder.append(editor.getData());
+			link.href = URL.createObjectURL(blobBuilder.getBlob());
+			link.download = (location.pathname.split("/").pop() || "Unnamed page.html");
+			link.innerHTML = "Download the page";
 			link.style.textDecoration = "underline";
-
 			return {
 				title : 'Save HTML file',
 				minWidth : 200,
