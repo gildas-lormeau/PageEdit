@@ -48,7 +48,7 @@ var pageedit;
 		function savedialog(editor) {
 			var link = document.createElement("a"), BOM = new ArrayBuffer(3), v = new Uint8Array(BOM);
 			v.set([ 0xEF, 0xBB, 0xBF ]);
-			link.href = URL.createObjectURL(new Blob(BOM, editor.getData()));
+			link.href = URL.createObjectURL(new Blob([ BOM, editor.getData() ]));
 			link.download = (location.pathname.split("/").pop() || "Unnamed page.html");
 			link.innerHTML = "Download the page";
 			link.style.textDecoration = "underline";

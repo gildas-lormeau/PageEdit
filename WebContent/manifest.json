@@ -4,7 +4,7 @@
     "16": "icon_16.png",
     "48": "icon_48.png",
     "128": "icon_128.png"},
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "Edit any HTML page into Chrome with this powerful WYSIWYG editor",
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*", "file:///*"],
