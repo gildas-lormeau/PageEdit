@@ -48,6 +48,6 @@ chrome.extension.onConnect.addListener(function(port) {
 });
 
 chrome.tabs.onRemoved.addListener(function(tabId) {
-	if (tabs[tab.id])
-		delete tabs[tab.id];
+	if (tabs[tabId])
+		delete tabs[tabId];
 });

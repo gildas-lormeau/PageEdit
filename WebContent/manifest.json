@@ -1,22 +1,33 @@
 {
-	"name": "PageEdit",
-	"icons": {
-		"16": "icon_16.png",
-		"48": "icon_48.png",
-		"128": "icon_128.png"},
-	"version": "0.0.28",
-	"description": "Edit any HTML page into Chrome with this powerful WYSIWYG editor",
-	"content_scripts": [{
-		"matches": ["http://*/*", "https://*/*", "file:///*"],
-		"js": [ "content.js" ],
-		"run_at" : "document_end",
-		"all_frames" : false
-	}],
-	"options_page": "options.html",
-	"background_page" : "background.html",
-	"browser_action": {
-	    "default_icon": "icon_48.png", 
-	    "default_title": "Edit this page !"
-	},
-	"permissions": [ "tabs", "http://*/",  "https://*/"]
+  "name": "PageEdit",
+  "icons": {
+    "16": "icon_16.png",
+    "48": "icon_48.png",
+    "128": "icon_128.png"},
+  "version": "0.0.29",
+  "description": "Edit any HTML page into Chrome with this powerful WYSIWYG editor",
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*", "file:///*"],
+    "js": [ "content.js" ],
+    "run_at" : "document_end",
+    "all_frames" : false
+  }],
+  "options_page": "options.html",
+  "background" : {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "web_accessible_resources": [
+    "scripts/ckeditor_config.js",
+    "scripts/inject_editor.js",
+    "ckeditor/*",
+    "plugins/*"
+  ],
+  "browser_action": {
+      "default_icon": "icon_48.png", 
+      "default_title": "Edit this page !"
+  },
+  "permissions": [ "tabs", "http://*/",  "https://*/"],
+  "manifest_version": 2
 }

@@ -33,3 +33,5 @@ function initOptions() {
 	});
 	document.getElementById('main').style.display = 'block';
 }
+
+addEventListener("load", initOptions, false);
